@@ -1,0 +1,79 @@
+//Vector Full
+#include <iostream>
+#include <vector>
+using namespace std; 
+int main() {
+    vector<int>v;
+    v.push_back(18);
+    v.push_back(29);
+    v.push_back(-4);
+    v.push_back(12);
+    v.push_back(44);
+    
+    //Access Elements
+ cout<<"Element at front: "<<v.front()<<endl;
+ cout<<"At 1st position: "<<v.at(1)<<endl;
+ cout<<"At 2nd position: "<<v.at(2)<<endl;
+ cout<<"At 3rd position: "<<v.at(3)<<endl;
+ cout<<"Element at end: "<<v.back()<<endl;
+  cout<<endl;
+  cout<<"..........................................."<<endl;
+  
+  //Replace Element
+  vector<int>::iterator itr;
+  itr=v.begin();
+  *itr=35;
+  v[2]=20;
+  itr+=4;
+  *itr=99;
+  cout<<"After Replace:"<<endl;
+  for(int i:v){
+      cout<<i<<endl;
+  }cout<<endl;
+   cout<<"............................................ "<<endl;
+   
+  //Insert an element
+  itr=v.begin();
+  v.insert (itr, 25) ;
+  cout<<"Insert an element at beginning:"<<endl;
+  for(int I:v){
+      cout<<I<<endl;
+  }cout<<endl;
+  cout<<"............................................ "<<endl;
+  
+   //Erase an Element
+   itr=v.end();
+  itr-=2;
+   v.erase(itr);
+   cout<<"Afert Erasing:"<<endl;
+   for(int I:v){
+       cout<<I<<endl;
+   }cout<<endl;
+  cout<<"............................................ "<<endl;
+  
+   //Removing Element
+   v.pop_back();
+   v.pop_back();
+   cout<<"After Removing:"<<endl;
+   for(int I:v){
+       cout<<I<<endl;
+   }cout<<endl;
+  cout<<"............................................ "<<endl;
+  
+   //Size & Capacity
+  cout<<"Size of vector: "<<v.size()<<endl<<endl;
+   cout<<"Maximum size of vector:"<<v.max_size()<<endl<<endl;
+   cout<<"Capacity of vector: "<<v.capacity()<<endl<<endl;
+ 
+   //After  Resizing
+    v.resize(100);
+   cout<<"Afer Resizing:"<<v.capacity ()<<endl<<endl;
+
+  // clearing vector
+   v.clear();
+   
+   //checking if vector is empty
+   cout<< "Check The vector is Empty  Or Not: "<<v.empty();
+   
+     return 0;
+}
