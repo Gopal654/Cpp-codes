@@ -1,0 +1,64 @@
+//STL LIST
+#include <iostream>
+#include <list>
+using namespace std;
+int main() {
+    list<int>ls;
+    ls.push_back(25);
+    ls.push_front(20);
+    ls.push_back(30);
+    ls.push_back(40);
+    ls.push_front(55);
+ 
+   cout<<"Without any operation -> ";
+    for(int temp:ls){
+        cout<<temp<<" ";
+    }cout<<endl;
+    
+   cout<<"Element at front -> "<<ls.front()<<endl;
+    cout<<"Element at back -> "<<ls.back()<<endl;
+    cout<<"After shorting element -> ";
+    ls.sort();
+    for(int temp:ls){
+        cout<<temp<<" ";
+    }cout<<endl<<endl;
+    
+    cout<<"After removing element -> ";
+    ls.pop_front();
+    ls.pop_back();
+    for(int temp:ls){
+        cout<<temp<<" ";
+    }cout<<endl;
+    
+    cout<<"After inserting element -> ";
+    list<int>::iterator litr;
+    litr=ls.end();
+    litr--;
+    ls.insert(litr, 45);
+    list<int>::iterator litr1;
+    litr1=ls.begin();
+    litr1++;
+    ls.insert(litr1,95);
+    for(int temp:ls){
+        cout<<temp<<" ";
+    }cout<<endl;
+    
+    cout<<"After Reversing element -> ";
+    ls.reverse();
+    for(int temp:ls){
+        cout<<temp<<" ";
+    }cout<<endl<<endl;
+    
+    cout<<"After Shorting element -> ";
+    ls.sort();
+    for(int temp:ls){
+        cout<<temp<<" ";
+    }cout<<endl;
+    
+    cout<<"Shorting in descending order -> ";
+    ls.sort(greater<int>());
+    for(int temp:ls){
+        cout<<temp<<" ";
+    }cout<<endl;
+    return 0;
+}
