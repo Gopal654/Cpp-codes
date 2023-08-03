@@ -36,9 +36,9 @@ int main() {
     litr--;
     ls.insert(litr, 45);
     list<int>::iterator litr1;
-    litr1=ls.begin();
-    litr1++;
-    ls.insert(litr1,95);
+    litr=ls.begin();
+    litr++;
+    ls.insert(litr,95);
     for(int temp:ls){
         cout<<temp<<" ";
     }cout<<endl;
