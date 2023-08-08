@@ -1,0 +1,29 @@
+// Peak Element & Index in mountain
+#include <iostream>
+using namespace std;
+int get_peak(int arr[],int size){
+    int start=0, end=size-1, mid;
+    while(start<end){
+        mid=start+(end-start)/2;
+        if(arr[mid]<arr[mid+1]){
+            start=mid+1;
+        }
+        else
+        end=mid;
+    }
+    //For index : return start Or end
+    cout<<"peak Element is : "<<arr[start]<<endl;
+    return start;
+}
+int main() {
+   int arr[100], size;
+   cout<<"Enter size of array : ";
+   cin>>size;
+   cout<<"Enter The Elements : ";
+   for(int i=0;i<size;i++){
+       cin>>arr[i];
+    }
+   int result=get_peak(arr, size);
+   cout<<"Index of the Peak Element is : "<<result;
+   return 0;
+}
